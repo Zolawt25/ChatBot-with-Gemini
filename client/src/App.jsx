@@ -58,9 +58,12 @@ const App = () => {
 
       setLoading(true);
 
-      const res = await axios.post(`http://localhost:3000/gemini`, {
-        prompt: input,
-      });
+      const res = await axios.post(
+        `https://chat-bot-server-azure.vercel.app/gemini`,
+        {
+          prompt: input,
+        }
+      );
       setInput("");
 
       const botResponse = res.data.bot;
